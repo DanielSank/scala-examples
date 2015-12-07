@@ -1,4 +1,4 @@
-object MyProgram {
+object CalculatorMain {
 
   // Partial (curried)
   def sumFunction1(f: Int => Int)(a: Int, b: Int): Int = {
