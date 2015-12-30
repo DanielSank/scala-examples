@@ -13,7 +13,6 @@ Little examples of how to use the Scala language
     * Scala eclipse plugin: http://download.scala-ide.org/sdk/lithium/e44/scala211/stable/site.
     You’ll definitely want the “Scala IDE for Eclipse” feature and probably the “Scala IDE plugins (incubation)” feature.
     The others are not needed.
-    * Typesafe plugin: http://eclipse-update.palantir.com/eclipse-typescript/
 * Install sbt. Just download it and put it in `~/bin` (and make sure `~/bin` is on your PATH).
 * Clone this repo (e.g. into `~/src/scala-examples`).
 * Navigate to the cloned repo, run sbt, and then at the prompt type `> eclipse` to generate eclipse project files.
