@@ -28,6 +28,10 @@ case class NonEmptyStack[A](elem: A, rest: Stack[A]) extends Stack[A] {
 
 object StackMain {
   def main(args: Array[String]) = {
+    println("This example doesn't actually do anything.")
+    println("Look at the source code to learn some advanced variance")
+    println("and type parameter bound techniques.")
+
     val apple = new Apple
     val gala = new Gala
     val banana = new Banana

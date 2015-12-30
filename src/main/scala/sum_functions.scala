@@ -1,4 +1,4 @@
-object CalculatorMain {
+object SumFunctionsMain {
 
   // Evaluate a function over a range of integers and sum the results.
   def sumFunction(f: Int => Int, a: Int, b: Int): Int = {

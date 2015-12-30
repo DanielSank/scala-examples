@@ -10,5 +10,8 @@ object VarianceMain {
 
     // val foo = new Foo[String]
     // val bar: Foo[Any] = foo
+
+    println("This example doesn't actually do anything.")
+    println("Look at the source code to learn about variance.")
   }
 }

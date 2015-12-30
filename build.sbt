@@ -1,6 +1,6 @@
-lazy val calculator = (project.in(file("calculator"))).
+lazy val sumFunctions = (project.in(file("sum_functions"))).
   settings(
-    name := "calculator",
+    name := "sum functions",
     version := "1.0",
     scalaVersion := "2.11.4"
   )
