@@ -5,7 +5,7 @@ object SumFunctionsMain {
     if (a > b) 0 else f(a) + sumFunction(f, a + 1, b)
   }
 
-  /* Note that the above implementation is not tail recursive. Also not that it
+  /* Note that the above implementation is not tail recursive. Also note that it
    * is not possible to partially evaluate the function. For example, suppose
    * we have a particular mathematical function f: Int => Int which we would
    * like to evaluate and sum over several different ranges of integers. To do
