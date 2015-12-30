@@ -1,12 +1,9 @@
 object ListsMain {
+
   abstract class MyList[+A] {
     def ::[B >: A](newHead: B): NotEmptyList[B] = this match {
       case NotEmptyList(head, tail) => NotEmptyList(newHead, this)
       case Nil => NotEmptyList(newHead, this)
-    }
-    def isEmpty: Boolean = this match {
-      case NotEmptyList(head, tail) => false
-      case Nil => true
     }
     def get(index: Int): A = this match{
       case Nil => error("oh no")
