@@ -1,7 +1,16 @@
 class Fruit
-class Apple extends Fruit
-class Gala extends Apple
-class Banana extends Fruit
+
+class Apple extends Fruit {
+  override def toString: String = "Apple"
+}
+
+class Gala extends Apple {
+  override def toString: String = "Gala"
+}
+
+class Banana extends Fruit {
+  override def toString: String = "Banana"
+}
 
 abstract class Stack[+A] {
   def push[B >: A](x: B): Stack[B] = new NonEmptyStack[B](x, this)
@@ -13,6 +22,10 @@ abstract class Stack[+A] {
       case NonEmptyStack(top, rest) => top == b.top && recur(a.pop, b.pop)
     }
     recur(this, other)
+  }
+  override def toString: String = this match {
+    case EmptyStack => ""
+    case NonEmptyStack(top, rest) => top.toString + ":" + rest.toString
   }
 }
 
@@ -28,10 +41,6 @@ case class NonEmptyStack[A](elem: A, rest: Stack[A]) extends Stack[A] {
 
 object StackMain {
   def main(args: Array[String]) = {
-    println("This example doesn't actually do anything.")
-    println("Look at the source code to learn some advanced variance")
-    println("and type parameter bound techniques.")
-
     val apple = new Apple
     val gala = new Gala
     val banana = new Banana
@@ -39,5 +48,9 @@ object StackMain {
     val stack1 = EmptyStack.push(apple)
     val stack2 = stack1.push(gala)
     val stack3 = stack2.push(banana)
+
+    println(s"stack1 = ${stack1}")
+    println(s"stack2 = ${stack2}")
+    println(s"stack3 = ${stack3}")
   }
 }
