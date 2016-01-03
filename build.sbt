@@ -1,3 +1,10 @@
+lazy val forComprehensions = (project.in(file("for_comprehensions"))).
+  settings(
+    name := "for comprehensions",
+    version := "1.0",
+    scalaVersion := "2.11.4"
+  )
+
 lazy val sumFunctions = (project.in(file("sum_functions"))).
   settings(
     name := "sum functions",
