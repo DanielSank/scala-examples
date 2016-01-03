@@ -15,16 +15,18 @@ abstract class MyList[+A] {
     case NotEmptyList(head, tail) => false
   }
   def length: Int = {
-    lengthRecur(0, this)
-  }
-  private def lengthRecur[B](total: Int, list: MyList[B]): Int = list match {
-    case MyNil => total
-    case NotEmptyList(head, tail) => lengthRecur(total + 1, tail)
+    def recur[B](total: Int, list: MyList[B]): Int = {
+      list match {
+        case MyNil => total
+        case NotEmptyList(head, tail) => recur(total + 1, tail)
+      }
+    }
+    recur(0, this)
   }
 }
 
-case class NotEmptyList[A](head: A, tail: MyList[A]) extends MyList[A]
-object MyNil extends MyList[Nothing]
+case class NotEmptyList[+A](head: A, tail: MyList[A]) extends MyList[A]
+case object MyNil extends MyList[Nothing]
 
 object ListsMain {
 
