@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 class Fruit
 
 class Apple extends Fruit {
@@ -17,6 +19,7 @@ abstract class Stack[+A] {
   def top: A
   def pop: Stack[A]
   def isPrefix[B >: A](other: Stack[B]): Boolean = {
+    @tailrec
     def recur(a: Stack[A], b: Stack[B]): Boolean = a match {
       case EmptyStack => true
       case NonEmptyStack(top, rest) => top == b.top && recur(a.pop, b.pop)
